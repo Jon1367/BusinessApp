@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -19,6 +20,8 @@ class ApiController extends Controller
 
     public function show($lat,$lon)
     {
+        $users = DB::select('select * from user');
+        var_dump($users);
     	// echo $lat;
     	// echo $lon;
 
