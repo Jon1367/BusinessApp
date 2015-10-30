@@ -1,0 +1,71 @@
+section{
+
+background-color: #323232;
+}
+h1,h2,h3{
+	font-family: 'Quicksand', sans-serif;
+	color:#5CBFDD;
+	
+}
+h2,h3{
+	font-size:30px; 
+}
+h4{
+	color:white;
+}
+p{
+	font-size:18px;
+}
+.blackBG{
+
+	background-color: #323232;
+}
+.whiteFont{
+	color:white;
+}
+span{
+	color:#0D71B9;
+	font-size:40px;
+}
+footer{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #0D71B9 ;
+}
+nav{
+	background-color: #0D71B9 !important;
+	padding-top:10px;
+	padding-bottom:10px;
+
+}
+.row{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.lightB{
+		color:#0D71B9;
+}
+.navbar {
+
+    margin-bottom: 0px !important;
+    border-radius: 1px;
+
+}
+.navbar-brand {
+    color: white !important;
+}
+ul > li > p{
+	font-size:16px; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+ul > li {
+	list-style: none;
+}
+.navbar-default {
+     background-color: #0D71B9 ; 
+     border-color: #0D71B9 ; 
+}
+/*===================== Material Design =========================*/
+
