@@ -34,8 +34,6 @@ footer{
 }
 nav{
 	background-color: #0D71B9 !important;
-	padding-top:10px;
-	padding-bottom:10px;
 
 }
 .row{
@@ -68,4 +66,8 @@ ul > li {
      border-color: #0D71B9 ; 
 }
 /*===================== Material Design =========================*/
+.navbar.navbar, .navbar-default.navbar {
+    background-color: #0D71B9 !important;
+    color: rgba(255, 255, 255, 0.84) !important;
+}
 
