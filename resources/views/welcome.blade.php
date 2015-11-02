@@ -149,7 +149,6 @@
 
 
     <ul>
-    {{5+5}}
       <li>
         <p>Search for business near your area to see their business model and how the company financials.</p>
       </li>
