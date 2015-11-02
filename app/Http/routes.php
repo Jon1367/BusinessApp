@@ -14,4 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/hello/{lat}/{lon}', 'ApiController@show');
+Route::get('hello/{lat}/{lon}', 'ApiController@show');
