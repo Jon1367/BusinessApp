@@ -18,8 +18,6 @@ class ApiController extends Controller
 
     public function show($lat,$lon)
     {
-        // $users = DB::select('select * from user');
-        // var_dump($users);
     	//  echo $lat;
     	// echo $lon;
 
@@ -29,9 +27,7 @@ class ApiController extends Controller
     	// create a new client
     	$client = new \GuzzleHttp\Client();
 
-  //   	// google place api to get near by busniess location
-        // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=28.581752899999998,-81.30447989999999&radius=500&key=AIzaSyC0iY_V_7CCDAZdbKYso2yRjjR3yJ5QYFM
-        // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='. $lat .','. $lon .'&radius=500&key=AIzaSyC0iY_V_7CCDAZdbKYso2yRjjR3yJ5QYFM
+   	   // google place api to get near by busniess location
     	$response = $client->get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='. $lat .','. $lon .'&radius=500&key='. $GoogleApiKey);
 
 	   //echo $response->getBody();
