@@ -35,6 +35,7 @@ class ApiController extends Controller
 		$data = $response->getBody();
         //return view('welcome');
 
+        echo $data;
         return Response::json($data);
     }
 

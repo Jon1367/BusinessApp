@@ -3,17 +3,12 @@
 <html>
     <head>
         <title>The Business Network</title>
-
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
-<link rel="stylesheet" href="/css/style.css">
-
-<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.css">
-
-
+        <link rel="stylesheet" href="/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.css">
     </head>
     <body ng-app="businessApp">
     <div ng-controller="searchCtrl">
@@ -96,15 +91,16 @@
       </div>
       <h2 class="text-center">LogIn</h2>
       <div class="modal-body ">
-        <form class="form-horizontal " role="form">
+        <form method="POST" action="/logIn" class="form-horizontal " role="form">
         <div class="form-group">
           <div class="col-sm-8 col-sm-push-2">
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-8 col-sm-push-2">
-            <input type="password" class="form-control" id="email" placeholder="Enter password">
+            <input type="password" class="form-control" name="password" placeholder="Enter password">
+            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
           </div>
         </div>
         <div class="form-group">        
@@ -144,7 +140,7 @@
 
   <div class="row">
     <div class="col-md-4 col-md-push-1">
-    <h2 class="text-center">How We Can Help</h2>
+    <h2 class="text-center">How Can We Help</h2>
 <br>
 
 
@@ -247,24 +243,21 @@
       <div class="col-md-4 col-md-push-3">
         <ul>
           <li>  <b>e: </b> <a href="">Jonathano1367@gmail.com</a></li>
-          <li>  <b>p: </b>  <a href="">1(310)717-30</a></li>
+          <li>  <b>p: </b>  <a href="tel:13107173095">1(310)717-3095</a></li>
           <li>  <b>a: </b> <a href="">14211 Ocean Gate ave, Hawthorne, 32792, CA</a></li>
         </ul>
          <br>
       </div>
   </div>
 </div> <!-- end of container -->
-
    </body>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js.map"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
-
     <script src="/js/location.js"></script>
 
 <script>

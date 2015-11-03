@@ -70,4 +70,31 @@ ul > li {
     background-color: #0D71B9 !important;
     color: rgba(255, 255, 255, 0.84) !important;
 }
+#userIcon{
+	color: white;
+	font-size: 24px;
+}
+li > span{
+	
+	padding-top: 15px;
+	padding-bottom:15px;
 
+}
+#sideBar{
+
+	background-color: #323232 !important;
+}
+#sectionOne{
+
+	height:300px;
+	background-color: #323232 !important;
+	padding-left:0px !important;
+
+}
+#sectionTwo{
+
+	height:300px;
+	background-color: white !important;
+	padding-left:0px !important;
+
+}
