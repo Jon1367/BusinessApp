@@ -13,7 +13,7 @@
     <body ng-app="businessApp">
     <div ng-controller="searchCtrl">
     
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
 <div class="navbar navbar-default">
@@ -78,7 +78,8 @@
 
   </div>
 </div>
-
+<br>
+<br>
 <!-- signIn modal -->
 
 <div id="LogIn" class="modal fade" role="dialog">
@@ -117,6 +118,7 @@
     </div>
 </div>
 
+<br>
 
 
 
@@ -155,39 +157,39 @@
       
     </div>
     <div class="col-md-4 col-md-push-3">
+        <form method="POST" action="/search" class="form-horizontal" role="form">
+              <h2 class="text-center">Search</h2>
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input  class="form-control" name="query" id="email" placeholder="Enter Business Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input  class="form-control" name="city" placeholder="Enter city">
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10">          
+                <select class="form-control" id="pwd">
+                  <option>Search by industry</option>
+                  <option>Tech</option>
+                  <option>Start Up</option>
+                  <option>Food</option>
+                  <option>marketing</option>
+                  <option>small business</option>
+                  <option>business near me</option>
+                </select>
+              </div>
+            </div>
 
-<form class="form-horizontal" role="form">
-      <h2 class="text-center">Search</h2>
-
-    <div class="form-group">
-
-      <div class="col-sm-10">
-        <input  class="form-control" id="email" placeholder="Enter Business Name">
-      </div>
-    </div>
-    <div class="form-group">
-
-      <div class="col-sm-10">          
-       
-          <select class="form-control" id="pwd">
-    <option>Search by industry</option>
-    <option>Tech</option>
-    <option>Start Up</option>
-    <option>Food</option>
-    <option>marketing</option>
-    <option>small business</option>
-    <option>business near me</option>
-
-  </select>
-      </div>
-    </div>
-
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button id="search" type="submit" class="btn btn-lg  btn-primary"  ng-click="search()">Search</button>
-      </div>
-    </div>
-  </form>
+            <div class="form-group">        
+              <div class="col-sm-offset-2 col-sm-10">
+                <button id="search" type="submit" class="btn btn-lg  btn-primary">Search</button>
+              </div>
+            </div>
+          </form>
     </div>
     
   </div> <!-- end of second row -->
@@ -250,6 +252,13 @@
       </div>
   </div>
 </div> <!-- end of container -->
+
+
+
+<footer>
+  
+</footer>
+
    </body>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

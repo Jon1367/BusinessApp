@@ -16,4 +16,7 @@ Route::get('/', function () {
 });
 Route::get('hello/{lat}/{lon}', 'ApiController@show');
 
+Route::post('search', 'ApiController@getData');
+
+
 Route::post('logIn', 'userAuthController@auth');

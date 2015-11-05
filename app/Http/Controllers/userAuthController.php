@@ -42,7 +42,7 @@ class userAuthController extends Controller
             return view('userHomePage',$data);
 
         }else{
-            echo 'failed';
+            //echo 'failed';
             return view('welcome');
 
         }

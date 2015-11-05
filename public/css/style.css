@@ -1,5 +1,6 @@
 section{
-
+	padding-top: 20px;
+	padding-bottom: 20px;
 background-color: #323232;
 }
 h1,h2,h3{
@@ -28,18 +29,16 @@ span{
 	font-size:40px;
 }
 footer{
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	background-color: #0D71B9 ;
 }
 nav{
 	background-color: #0D71B9 !important;
+	margin-bottom: 20px;
 
 }
-.row{
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
+
 .lightB{
 		color:#0D71B9;
 }
@@ -93,7 +92,7 @@ li > span{
 }
 #sectionTwo{
 
-	height:300px;
+	height:190px;
 	background-color: white !important;
 	padding-left:0px !important;
 

@@ -39,7 +39,8 @@
 
 </div>
 </nav> 
-
+<div class="row">
+  
        <div class="col-sm-3 col-md-2 sidebar" id="sideBar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
@@ -84,10 +85,22 @@
 	   	     	</div>
 	        	
 	        
+
         	
         </div>
 
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<footer></footer>
 
 
 
