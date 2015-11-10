@@ -44,7 +44,7 @@ class ApiController extends Controller
         $name = $request->input('query');
         $city = $request->input('city');
 
-        /
+        
         $GoogleApiKey = env('Google_APIKEY','forge');
 
         // create a new client

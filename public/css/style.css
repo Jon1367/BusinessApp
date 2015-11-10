@@ -68,6 +68,7 @@ ul > li {
 .navbar.navbar, .navbar-default.navbar {
     background-color: #0D71B9 !important;
     color: rgba(255, 255, 255, 0.84) !important;
+
 }
 #userIcon{
 	color: white;
@@ -81,19 +82,70 @@ li > span{
 }
 #sideBar{
 
-	background-color: #323232 !important;
+	height:700px;
+	background-color: #E5E5E5 !important;
+	padding-top: 100px;
+	padding-right:0px;
+
+}
+ul[class="nav nav-sidebar"] > li{
+
+	background-color: #0D71B9 ;
+}
+
+ul[class="nav nav-sidebar"] > li > a{
+
+	color:#fff;
+}
+ul[class="nav nav-sidebar"] > li >a:hover{
+
+	background-color: #323232;
 }
 #sectionOne{
 
-	height:300px;
+	height:350px;
 	background-color: #323232 !important;
 	padding-left:0px !important;
 
 }
 #sectionTwo{
 
-	height:190px;
+	height:350px;
 	background-color: white !important;
 	padding-left:0px !important;
 
 }
+/*===================== Icons =========================*/
+span[class="glyphicon glyphicon-home"]{
+
+	float: right;
+	color:white; 
+	font-size: 15px;
+
+
+}
+span[class="glyphicon glyphicon-envelope"]{
+
+	float: right;
+	color:white; 
+	font-size: 15px;
+
+
+}
+span[class="glyphicon glyphicon-search"]{
+
+	float: right;
+	color:white; 
+	font-size: 15px;
+
+
+}
+span[class="glyphicon glyphicon-cloud-upload"]{
+
+	float: right;
+	color:white; 
+	font-size: 15px;
+
+
+}
+

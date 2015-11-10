@@ -25,7 +25,7 @@
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
-      <li class="active"><a href="javascript:void(0)">Active</a></li>
+      <li class="active"><a href="javascript:void(0)">Home</a></li>
       <li><a href="javascript:void(0)">Service</a></li>
       <li><a href="javascript:void(0)">Contact Info</a></li>
       </ul>
