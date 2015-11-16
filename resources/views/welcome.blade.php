@@ -21,7 +21,7 @@
   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
     <span class="icon-bar"></span>
   </button>
-   <a class="navbar-brand" href="javascript:void(0)">The Business NetWork</a>
+   <a class="navbar-brand" href="/">The Business NetWork</a>
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
@@ -29,9 +29,6 @@
       <li><a href="javascript:void(0)">Service</a></li>
       <li><a href="javascript:void(0)">Contact Info</a></li>
       </ul>
-      <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
-      </form>
        <ul class="nav navbar-nav navbar-right">
         <li><a href="javascript:void(0)" type="button" data-toggle="modal" data-target="#SignIn">SignUp</a></li>
         <li><a href="javascript:void(0)" data-toggle="modal" data-target="#LogIn">LogIn</a></li>
@@ -123,6 +120,7 @@
 
 
  <div class="row blackBG">
+ <br>
 
 
 		<h1 class="text-center whiteFont">Welcome to Business Network</h1>
@@ -134,7 +132,10 @@
 		  the businesses financials  so that ultimately it allows the user 
 		  to choose what business fits their need most. </p>
 <br>
+  <br>
+  <br>
 	</div>
+
   </div>
 
 <br>
@@ -156,7 +157,10 @@
     </ul>
       
     </div>
+    
     <div class="col-md-4 col-md-push-3">
+  
+
         <form method="POST" action="/search" class="form-horizontal" role="form">
               <h2 class="text-center">Search</h2>
             <div class="form-group">
@@ -164,23 +168,11 @@
                 <input  class="form-control" name="query" id="email" placeholder="Enter Business Name">
               </div>
             </div>
+
             <div class="form-group">
               <div class="col-sm-10">
                 <input  class="form-control" name="city" placeholder="Enter city">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-10">          
-                <select class="form-control" id="pwd">
-                  <option>Search by industry</option>
-                  <option>Tech</option>
-                  <option>Start Up</option>
-                  <option>Food</option>
-                  <option>marketing</option>
-                  <option>small business</option>
-                  <option>business near me</option>
-                </select>
               </div>
             </div>
 
@@ -189,7 +181,10 @@
                 <button id="search" type="submit" class="btn btn-lg  btn-primary">Search</button>
               </div>
             </div>
+            
           </form>
+          <br>
+          
     </div>
     
   </div> <!-- end of second row -->
@@ -197,39 +192,43 @@
 <br>
           <!--Services -->
 <section id="services">
+<br>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading HeaderColor whiteFont">Service</h2>
                 
+                
                 </div>
             </div>
+            <br>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <span class="glyphicon glyphicon-stats"></span>
+                   
+                        <span class="glyphicon glyphicon-stats homePageIcons"></span>
                 
-                    </span>
+                  
                     <h4 class="service-heading">Research</h4>
                     <p class="text-muted">Reasearch companies in any industry.</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <span class="glyphicon glyphicon-user"></span>
+                  
+                        <span class="glyphicon glyphicon-user homePageIcons"></span>
              
-                    </span>
                     <h4 class="service-heading">Collaborate</h4>
                     <p class="text-muted"> Find other business willing to collaborate.</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </span>
+                  
+                        <span class="glyphicon glyphicon-search homePageIcons"></span>
+                   
                     <h4 class="service-heading">Discover</h4>
                     <p class="text-muted">Find What other business are doing.</p>
                 </div>
             </div>
     </div>
+    <br>
+    <br>
 </section>
 <br>
 <br>

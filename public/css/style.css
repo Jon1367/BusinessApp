@@ -1,22 +1,19 @@
 section{
+
 	padding-top: 20px;
 	padding-bottom: 20px;
-background-color: #323232;
+	background-color: #323232;
+
 }
 h1,h2,h3{
 	font-family: 'Quicksand', sans-serif;
 	color:#5CBFDD;
 	
 }
-h2,h3{
-	font-size:30px; 
-}
 h4{
 	color:white;
 }
-p{
-	font-size:18px;
-}
+
 .blackBG{
 
 	background-color: #323232;
@@ -24,10 +21,7 @@ p{
 .whiteFont{
 	color:white;
 }
-span{
-	color:#0D71B9;
-	font-size:40px;
-}
+
 footer{
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -132,14 +126,7 @@ span[class="glyphicon glyphicon-envelope"]{
 
 
 }
-span[class="glyphicon glyphicon-search"]{
 
-	float: right;
-	color:white; 
-	font-size: 15px;
-
-
-}
 span[class="glyphicon glyphicon-cloud-upload"]{
 
 	float: right;
@@ -148,4 +135,72 @@ span[class="glyphicon glyphicon-cloud-upload"]{
 
 
 }
+/*===================== User Page Styling =========================*/
 
+.homePageIcons{
+
+	color:#0D71B9;
+	font-size:35px;
+	background-color:#fff;
+	padding:30px;
+	border-radius:50px
+
+}
+#searchIcon{
+
+	float: right;
+	color:white; 
+	font-size: 15px;
+
+
+}
+#searchHeader{
+
+	padding-top:50px;
+	padding-bottom:50px;
+}
+label{
+
+	padding-top:5px;
+	color:white;
+
+}
+#filters{
+
+	display: inline-block;
+}
+#filters > li{
+
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#inputSearchIcon{
+
+	color:#fff;
+}
+.anchorPlaces{
+
+	
+
+}
+.placesHover:hover{
+
+color: red !important;
+width:100%;
+height: 100%;
+background-color: red !important;
+
+
+}
+div[class="panel panel-info"]:hover{
+
+	background-color: rgba(55,191,255,.3);
+	color:white !important;
+	text-decoration: none !important;
+
+}
+.btn-primary:not(.btn-link):not(.btn-flat) {
+    background-color: #0D71B9 !important;
+    
+}

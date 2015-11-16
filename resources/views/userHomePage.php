@@ -27,9 +27,6 @@
       <li><a href="javascript:void(0)">Service</a></li>
       <li><a href="javascript:void(0)">Contact Info</a></li>
       </ul>
-      <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
-      </form>
        <ul class="nav navbar-nav navbar-right">
         <li><a href=""><?php echo $email; ?></a></li>
         <li><span class="glyphicon glyphicon-user" id="userIcon"></span></li>
@@ -48,8 +45,10 @@
             <br>
             <br>
             <br>
+            <br>
+            <br>
             <li><a href="">Inbox  <span class="glyphicon glyphicon-envelope"></span></a></li>
-            <li><a href="">Search <span class="glyphicon glyphicon-search"></span></a></li>
+            <li><a href="">Search <span id="searchIcon" class="glyphicon glyphicon-search"></span></a></li>
             <li><a href="">Upload <span class="glyphicon glyphicon-cloud-upload"></span></a></li>
             <li class="text-center"><a href="">Logout</a></li>
 

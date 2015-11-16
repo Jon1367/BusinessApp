@@ -1,4 +1,3 @@
-blackBG
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +20,7 @@ blackBG
   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
     <span class="icon-bar"></span>
   </button>
-   <a class="navbar-brand" href="javascript:void(0)">The Business NetWork</a>
+   <a class="navbar-brand" href="/">The Business NetWork</a>
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
@@ -29,9 +28,6 @@ blackBG
       <li><a href="javascript:void(0)">Service</a></li>
       <li><a href="javascript:void(0)">Contact Info</a></li>
       </ul>
-      <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
-      </form>
        <ul class="nav navbar-nav navbar-right">
         <li><a href="javascript:void(0)" type="button" data-toggle="modal" data-target="#SignIn">SignUp</a></li>
         <li><a href="javascript:void(0)" data-toggle="modal" data-target="#LogIn">LogIn</a></li>
@@ -43,24 +39,96 @@ blackBG
 </nav> 
 <br>
 <br>
+<div class="row blackBG" id="searchHeader">
+  <div class="col-md-3 col-md-offset-3">
+      <form action="">
+      <br>
+      <br>
+      <div class="input-group">
+    
+        <input  class="form-control" name="query" placeholder="Enter Business Name">
+            <span class="input-group-addon glyphicon glyphicon-search" id="inputSearchIcon"></span>       
+         </div>
+      </form>
+  </div>
+
+  <div class="col-md-5 ">
+  <h4 class="text-center">Filters</h4>
+    <form action="" >
+
+      <ul id="filters">
+
+        <li>
+          <div class="togglebutton">
+              <label>
+                  <input type="checkbox" checked=""><span class="toggle"></span> Near By
+              </label>
+          </div>
+        </li>
+        
+        <li>
+          <div class="togglebutton">
+              <label>
+                  <input type="checkbox" checked=""><span class="toggle"></span> A-Z
+              </label>
+          </div>
+        </li>
+
+        <li>
+          <div class="togglebutton">
+            <label>
+                <input type="checkbox" checked=""><span class="toggle"></span> Highest Ratting 
+              </label>
+            </div>
+        </li>
+
+        <li>
+          <div class="togglebutton">
+            <label>
+                <input type="checkbox" checked=""><span class="toggle"></span>  Lowest Ratting
+            </label>
+          </div>
+        </li>
+
+      </ul>
+
+    </form>
+
+  </div>
+
+</div>
+
 <br>
+<div class="row">
+    <div class="col-md-5 col-md-offset-4">
+      @for ($i = 0; $i < count($places['results']); $i++)
+     <a href="/processName/{{ $places['results'][$i]['name'] }} ">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+                <h3 class="panel-title"> {{ $places['results'][$i]['name'] }} </h3>
+          </div>
+          <div class="panel-body">
 
-<div class="row blackBG">
+          @if ( $places['results'][$i]['rating'])
 
-</div>
+          <span class="col-sm-2"> <b>Ratting:</b>{{ $places['results'][$i]['rating'] }}</span>
 
-<div>
-@for ($i = 0; $i < count($places['results']); $i++)
-<div class="panel panel-info">
-  <div class="panel-heading">
-        <h3 class="panel-title"> {{$places['results'][$i]['name'] }}</h3>
-  </div>
-  <div class="panel-body">
-                             
-  </div>
-</div>
-   
-@endfor
+
+          @endif
+
+          <img class="col-sm-2 col-sm-offset-2" src="{{ $places['results'][$i]['icon'] }}" alt="">
+
+
+
+
+                                     
+          </div>
+        </div>
+        </a>
+    
+       
+      @endfor
+    </div>
 
 </div>
 

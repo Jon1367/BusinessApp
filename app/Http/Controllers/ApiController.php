@@ -63,7 +63,9 @@ class ApiController extends Controller
         $jsonarr = json_decode($apiData,true);
 
         //var_dump($jsonarr);
+        //echo $jsonarr;
         //echo $jsonarr['results'][0]['name'];
+
 
 
         $data = array(
@@ -72,6 +74,31 @@ class ApiController extends Controller
 
 
         return view('places',$data);
+
+    }
+    public function getDetails($name){
+
+        //echo $name;
+
+         // create a new client
+        $client = new \GuzzleHttp\Client();
+
+          // google place api to get near by busniess location
+        $response = $client->get('http://dev.markitondemand.com/MODApis/Api/v2/Lookup/jsonp?input='. $name .'&callback=myFunction');
+
+
+        // api response
+        $apiData = $response->getBody();
+
+
+
+     
+        // convert to json
+        $jsonarr = json_decode($apiData,true);
+
+
+        var_dump($jsonarr);
+
 
     }
 

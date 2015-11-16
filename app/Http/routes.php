@@ -20,3 +20,6 @@ Route::post('search', 'ApiController@getData');
 
 
 Route::post('logIn', 'userAuthController@auth');
+
+Route::get('processName/{name}', 'ApiController@getDetails');
+
