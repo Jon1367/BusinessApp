@@ -85,6 +85,7 @@ class ApiController extends Controller
 
           // google place api to get near by busniess location
         $response = $client->get('http://dev.markitondemand.com/MODApis/Api/v2/Lookup/jsonp?input='. $name .'&callback=myFunction');
+                                  http://dev.markitondemand.com/MODApis/Api/v2/Lookup/jsonp?input=public%20storage&callback=myFunction
 
 
         // api response

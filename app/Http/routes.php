@@ -13,6 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
+    //return View::make('index'); 
 });
 Route::get('hello/{lat}/{lon}', 'ApiController@show');
 

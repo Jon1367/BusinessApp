@@ -36,7 +36,7 @@
 
 </div>
 </nav> 
-<div class="row">
+<div class="row"  ng-app="businessApp">
   
        <div class="col-sm-3 col-md-2 sidebar" id="sideBar">
  
@@ -57,27 +57,9 @@
 
         </div>
 
-        <div class="col-md-10" id="sectionOne">
+        <div class="col-md-10" ng-view>
 	   	  
-	   	     	<div class="col-sm-12" >
-        				<h2 class="text-center">Most Popular Business modals</h2>
 
-	   	     		
-	   	     	</div>
-	        	
-	        
-        	
-        </div>
-
-
-
-        <div class="col-md-10" id="sectionTwo">
-	   	  
-	   	     	<div class="col-sm-12" >
-        				<h2 class="text-center">Most Recent</h2>
-
-	   	     		
-	   	     	</div>
 	        	
 	        
 
@@ -97,7 +79,12 @@
 </body>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.js"></script>
+        <!-- Angular Route -->
+  
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js.map"></script>

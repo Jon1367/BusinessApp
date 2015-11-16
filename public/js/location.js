@@ -1,39 +1,48 @@
 /*====== Angular =======*/
 
-var app = angular.module('businessApp',[]);
+
+// angular.module('businessApp"', ['ngRoute'])
+// .config(function($routeProvider){
+//     $routeProvider
+//     .when('/', {
+//         templateUrl: 'views/home.html',
+//         controller: 'mainController'
+//     }).otherwise({
+//         redirectTo: '/'
+//     });// redirect Closing tag
+
+// })
+
+// .controller('mainController', ['$scope', function($scope){
+       
 
 
-app.controller("searchCtrl", ["$scope", "$rootScope","$http",
-  function($scope, $rootScope ,$http) {
+// }]);
+
+ var app = angular.module("businessApp", ["ngRoute"])
+ .config(function($routeProvider){
+      $routeProvider
+    .when('/', {
+        templateUrl: 'views/home.html',
+        controller: 'mainController'
+    }).when('/createBM', {
+        templateUrl:'views/createBM.html',
+        controller: 'createController'
+    }).otherwise({
+        redirectTo: '/'
+    });
+  })
+
+ .controller('mainController', ['$scope', function($scope){
+       
 
 
-    // on click search 
-    $scope.search = function() {
+}])
 
-      //ask for golocation
-      if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            function (position) {
-              $scope.$apply(function () {
-                // console.log(position.coords.longitude);
-                //console.log(position);
-
-               // Ajax call to send geolocation to the server to do google api call
-               $http.get('/hello/'+ position.coords.latitude +'/'+position.coords.longitude).
-                success(function(data) {
-                    //$scope.data = data;
-                    // response from server
-                    console.log(data);
-                });
+  .controller('createController', ['$scope', function($scope){
+       
 
 
-
-
-
-              });
-            });
-      }
-    }
-
-  
 }]);
+
+ // }]);
