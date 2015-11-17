@@ -57,6 +57,14 @@
           });
 
 
+     //    $scope.filterEvents = function () {
+         
+     //     $scope.info;
+
+     // }
+//};
+
+
 }])
  .controller('inboxController', ['$scope', function($scope){
        
