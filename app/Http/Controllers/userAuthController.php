@@ -30,8 +30,10 @@ class userAuthController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
-        //echo $email;
-       //echo  Hash::make($password);
+
+
+       //echo  Hash::make();
+
 
         if (Auth::attempt(['email' => $email, 'password' => $password]))
         {
@@ -39,6 +41,8 @@ class userAuthController extends Controller
                 'email'=>$email
             );
             //var_dump($data);
+
+            session(['userEmail' => $email]);
             return view('userHomePage',$data);
 
         }else{

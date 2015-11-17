@@ -10,6 +10,12 @@ h1,h2,h3{
 	color:#5CBFDD;
 	
 }
+h3{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:20px;
+	font-weight: 600;
+	color:gray;
+}
 h4{
 	color:white;
 }
@@ -80,6 +86,7 @@ li > span{
 	background-color: #E5E5E5 !important;
 	padding-top: 100px;
 	padding-right:0px;
+	border-right: 1px solid black;
 
 }
 ul[class="nav nav-sidebar"] > li{
@@ -203,4 +210,35 @@ div[class="panel panel-info"]:hover{
 .btn-primary:not(.btn-link):not(.btn-flat) {
     background-color: #0D71B9 !important;
     
+}
+.left{
+
+	float: left;
+
+}
+.right{
+
+	float: right;
+
+}
+.clear{
+
+	clear:both;
+}
+.leftClear{
+
+	clear:left;
+}
+.rightClear{
+
+	clear:right;
+}
+.bottomColHeight{
+
+	height: 150px;
+}
+.colHeight{
+
+	height:400px;
+
 }

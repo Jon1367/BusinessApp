@@ -35,7 +35,7 @@ class ApiController extends Controller
 		$data = $response->getBody();
         //return view('welcome');
 
-        echo $data;
+        //echo $data;
         return Response::json($data);
     }
     public function getData(Request $request){
@@ -76,29 +76,31 @@ class ApiController extends Controller
         return view('places',$data);
 
     }
-    public function getDetails($name){
-
-        //echo $name;
-
-         // create a new client
-        $client = new \GuzzleHttp\Client();
-
-          // google place api to get near by busniess location
-        $response = $client->get('http://dev.markitondemand.com/MODApis/Api/v2/Lookup/jsonp?input='. $name .'&callback=myFunction');
-                                  http://dev.markitondemand.com/MODApis/Api/v2/Lookup/jsonp?input=public%20storage&callback=myFunction
+    public function getUser(){
 
 
-        // api response
-        $apiData = $response->getBody();
+        $userEmail = session('userEmail');
+
+        $query = DB::table('businessContent')->select('*')->where('userEmail', $userEmail)->get();
+
+        //var_dump($query);
+
+        return response()->json(['data' => $query]);
+       
 
 
-
-     
-        // convert to json
-        $jsonarr = json_decode($apiData,true);
+    }
+    public function getUserBM(){
 
 
-        var_dump($jsonarr);
+        // $userEmail = session('userEmail');
+
+        // $query = DB::table('businessVontent')->select('*')->where('userEmail', $userEmail);
+
+        // echo $query;
+
+        //return response()->json(['email' => $userEmail]);
+       
 
 
     }

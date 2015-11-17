@@ -15,12 +15,30 @@ Route::get('/', function () {
     return view('welcome');
     //return View::make('index'); 
 });
-Route::get('hello/{lat}/{lon}', 'ApiController@show');
 
 Route::post('search', 'ApiController@getData');
 
 
-Route::post('logIn', 'userAuthController@auth');
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('hello/{lat}/{lon}', 'ApiController@show');
 
 Route::get('processName/{name}', 'ApiController@getDetails');
+
+Route::get('getUser', 'ApiController@getUser');
+
+Route::get('getUserBM', 'ApiController@getUserBM');
+
+
+/*
+|--------------------------------------------------------------------------
+| login Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::post('logIn', 'userAuthController@auth');
 

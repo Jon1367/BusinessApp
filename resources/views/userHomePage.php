@@ -41,15 +41,15 @@
        <div class="col-sm-3 col-md-2 sidebar" id="sideBar">
  
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#"> Home <span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active"><a href="#/"> Home <span class="glyphicon glyphicon-home"></span></a></li>
             <br>
             <br>
             <br>
             <br>
             <br>
-            <li><a href="">Inbox  <span class="glyphicon glyphicon-envelope"></span></a></li>
-            <li><a href="">Search <span id="searchIcon" class="glyphicon glyphicon-search"></span></a></li>
-            <li><a href="">Upload <span class="glyphicon glyphicon-cloud-upload"></span></a></li>
+            <li><a href="#/inbox">Inbox  <span class="glyphicon glyphicon-envelope"></span></a></li>
+            <li><a href="#/search">Search <span id="searchIcon" class="glyphicon glyphicon-search"></span></a></li>
+            <li><a href="#/createBM">Create Business Modal <span class="glyphicon glyphicon-cloud-upload"></span></a></li>
             <li class="text-center"><a href="">Logout</a></li>
 
           </ul>
@@ -57,7 +57,7 @@
 
         </div>
 
-        <div class="col-md-10" ng-view>
+        <div ng-view>
 	   	  
 
 	        	
