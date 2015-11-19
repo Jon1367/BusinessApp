@@ -31,7 +31,7 @@ Route::get('processName/{name}', 'ApiController@getDetails');
 
 Route::get('getUser', 'ApiController@getUser');
 
-Route::get('getUserBM', 'ApiController@getUserBM');
+Route::get('updateUserBM/{content}/{table}', 'ApiController@updateUserKey');
 
 
 /*

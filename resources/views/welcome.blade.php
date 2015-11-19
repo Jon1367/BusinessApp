@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.css">
     </head>
-    <body ng-app="businessApp">
-    <div ng-controller="searchCtrl">
+    <body>
+    <div>
     
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -30,8 +30,8 @@
       <li><a href="javascript:void(0)">Contact Info</a></li>
       </ul>
        <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:void(0)" type="button" data-toggle="modal" data-target="#SignIn">SignUp</a></li>
-        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#LogIn">LogIn</a></li>
+        <li><a href="" type="button" data-toggle="modal" data-target="#SignIn">SignUp</a></li>
+        <li><a href="" data-toggle="modal" data-target="#LogIn">LogIn</a></li>
       </ul>
   </div>
 </div>
@@ -266,7 +266,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js.map"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
-    <script src="/js/location.js"></script>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

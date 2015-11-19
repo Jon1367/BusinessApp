@@ -90,7 +90,16 @@ class ApiController extends Controller
 
 
     }
-    public function getUserBM(){
+    public function updateUserKey($content,$table){
+
+        $userEmail = session('userEmail');
+
+        echo $content;
+        echo $table;
+
+        DB::table('businessContent')->insert(
+                array('userEmail' => $userEmail, 'content' => $content, 'type' => $table)
+        );
 
 
         // $userEmail = session('userEmail');

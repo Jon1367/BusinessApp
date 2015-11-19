@@ -33,7 +33,7 @@
  }])
  .controller('createController', ['$scope', '$http', function($scope,$http){
        
-   
+
        
         $http({
           method: 'GET',
@@ -56,13 +56,68 @@
 
           });
 
+          // Add to DB
+          $scope.addKeyPartner = function(){
 
-     //    $scope.filterEvents = function () {
-         
-     //     $scope.info;
+            var table = 'Key Partners';
 
-     // }
-//};
+            console.log($scope.keyPartner);
+
+            $http({
+              method: 'GET',
+              url: '/updateUserBM/'+ $scope.keyPartner +'/' + table
+            }).then(function successCallback(response) {
+
+                console.log('Good :)');
+                console.log(response);
+
+
+
+                console.log($scope.userBM )
+              }, function errorCallback(response) {
+
+                console.log('Error -__-');
+                console.log(response);
+
+              });
+
+          }
+
+          $scope.filterKey = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Key Partners'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+            
+          $scope.filterActivities = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Key Activities'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+            
+          }
 
 
 }])
