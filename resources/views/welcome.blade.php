@@ -252,9 +252,10 @@
   </div>
 </div> <!-- end of container -->
 
+<br>
+<br>
 
-
-<footer>
+<footer class="footer navbar-fixed-bottom">
   
 </footer>
 

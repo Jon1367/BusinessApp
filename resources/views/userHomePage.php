@@ -8,6 +8,7 @@
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.css">
+        <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
     </head>
 <body>
 				
@@ -23,9 +24,7 @@
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
-      <li class="active"><a href="javascript:void(0)">Active</a></li>
-      <li><a href="javascript:void(0)">Service</a></li>
-      <li><a href="javascript:void(0)">Contact Info</a></li>
+
       </ul>
        <ul class="nav navbar-nav navbar-right">
         <li><a href=""><?php echo $email; ?></a></li>
@@ -41,12 +40,7 @@
        <div class="col-sm-3 col-md-2 sidebar" id="sideBar">
  
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#/"> Home <span class="glyphicon glyphicon-home"></span></a></li>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <li ><a href="#/"> Home <span class="glyphicon glyphicon-home"></span></a></li>
             <li><a href="#/inbox">Inbox  <span class="glyphicon glyphicon-envelope"></span></a></li>
             <li><a href="#/search">Search <span id="searchIcon" class="glyphicon glyphicon-search"></span></a></li>
             <li><a href="#/createBM">Create Business Modal <span class="glyphicon glyphicon-cloud-upload"></span></a></li>
@@ -69,7 +63,10 @@
 </div>
 
 
-<footer></footer>
+<br>
+<br>
+
+<footer class="footer navbar-fixed-bottom"></footer>
 
 
 

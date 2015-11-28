@@ -29,8 +29,8 @@ h4{
 }
 
 footer{
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	background-color: #0D71B9 ;
 }
 nav{
@@ -97,8 +97,14 @@ ul[class="nav nav-sidebar"] > li{
 ul[class="nav nav-sidebar"] > li > a{
 
 	color:#fff;
+	
+
 }
 ul[class="nav nav-sidebar"] > li >a:hover{
+
+	background-color: rgba(55,191,255,.5) !important;
+}
+ul[class="nav nav-sidebar"] > li >a:visited{
 
 	background-color: #323232;
 }
@@ -252,6 +258,12 @@ div[class="panel panel-info"]:hover{
   width:6em;
 
 
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
 
 }
 .note{
@@ -263,14 +275,31 @@ div[class="panel panel-info"]:hover{
   font-weight:normal;
   font-family:arial,sans-serif;
   color: black;
+  font-weight:bold;
 
  }
 .note li a p{
 
-	font-size:10px;
+	font-size:12px;
 	color:black;
+	font-family:"Reenie Beanie",arial,sans-serif;
 
 
+}
+.boderLeft{
+
+	border-left: 6px solid black;
+
+}
+.borderRight{
+
+	border-right: 2px solid black;
+
+
+}
+.borderTop{
+
+	border-bottom: 2px solid black;
 }
 /**{
   margin:0;

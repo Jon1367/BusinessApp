@@ -1,7 +1,6 @@
 /*====== Angular =======*/
 
 
-
  var app = angular.module("businessApp", ["ngRoute"])
  .config(function($routeProvider){
       $routeProvider
