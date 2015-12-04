@@ -17,9 +17,8 @@ class userAuthController extends Controller
      */
     public function index()
     {
-        //
-    }
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,12 +26,12 @@ class userAuthController extends Controller
      */
     public function auth(Request $request)
     {
+
         $email = $request->input('email');
         $password = $request->input('password');
 
 
-
-       //echo  Hash::make();
+        //echo  Hash::make();
 
 
         if (Auth::attempt(['email' => $email, 'password' => $password]))
@@ -58,9 +57,11 @@ class userAuthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function logOut(Request $request)
     {
-        //
+        $request->session()->flush();
+
+        return view('welcome');
     }
 
     /**
@@ -71,7 +72,7 @@ class userAuthController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**

@@ -44,8 +44,7 @@
             <li><a href="#/inbox">Inbox  <span class="glyphicon glyphicon-envelope"></span></a></li>
             <li><a href="#/search">Search <span id="searchIcon" class="glyphicon glyphicon-search"></span></a></li>
             <li><a href="#/createBM">Create Business Modal <span class="glyphicon glyphicon-cloud-upload"></span></a></li>
-            <li class="text-center"><a href="">Logout</a></li>
-
+            <li class="text-center"><a href="/logOut">Logout</a></li>
           </ul>
 
 

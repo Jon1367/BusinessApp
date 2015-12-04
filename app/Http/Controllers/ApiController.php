@@ -90,6 +90,19 @@ class ApiController extends Controller
 
 
     }
+    public function getContent(){
+
+
+        // Get Business modeal from DB for user's to search threw.
+        $query = DB::table('businessContent')->select('*')->where('type', 'title')->get();
+
+        //var_dump($query);
+
+        return response()->json(['data' => $query]);
+       
+
+
+    }
     public function updateUserKey($content,$table){
 
         $userEmail = session('userEmail');
@@ -114,7 +127,46 @@ class ApiController extends Controller
 
     }
 
+    public function updateNote($content,$table,$type){
 
+        $userEmail = session('userEmail');
+        // $userEmail = 'test@test.com';
+        // echo $userEmail;
+        // echo $content;
+        // echo $table;
+        // echo $type;
+
+        $query = DB::table('businessContent')->select('*')->where('userEmail', $userEmail)->where('type', $table)->where('value', $type)->get();
+
+        //var_dump($query);
+
+        if(count($query) === 0){
+
+                DB::table('businessContent')->insert(
+                        array('userEmail' => $userEmail, 'content' => $content, 'type' => $table, 'value' => $type)
+                );
+
+                // echo 'true';
+
+                return response()->json(['data' => 'true']);
+
+
+            }else{
+
+               // echo 'false';
+
+                return response()->json(['data' => 'false']);
+
+            }
+
+                return response()->json(['data' => 'false']);
+            
+
+
+       
+
+
+    }
 }
 
 ?>

@@ -1,6 +1,6 @@
 <div class="col-md-10" >
 
-	<h1 class="text-center"> Create a Business Modal</h1>
+	<h1 class="text-center"> Create a Business Modals</h1>
 	<br>
 
 <div class="row">
@@ -8,17 +8,23 @@
 		
 		<div class="col-sm-2 col-sm-offset-1 colHeight boderLeft" style="border:1px solid black;">
 
-			<h3>Key Partners</h3>
+	
+		<h5 class="col-sm-2" >Key Partners</h5>
+			<span class="glyphicon glyphicon-link right" style="margin-top:20px;"></span>
 
-			<div class="col-sm-2" >
 
+			<div class="col-sm-2 clear" >
 
+<!-- 			Sticky NOTES Section -->
 			<ul class="note">
 				  <li ng-repeat="info in userBM  | filter:filterKey | limitTo:2">
-				    <a href="#">
-				      <h2 class="text-center noteHeader">{{info.type}}</h2>
-				      <p>{{info.content}}</p>
+					
+				    <a>
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+						  <button class="left" >-</button>
+						  <button   class="right" ng-click="updateNote(info)">+</button>
 				    </a>
+
 				  </li>
 
   			</ul>
@@ -29,11 +35,16 @@
 
 
 
+<!-- 			Add Sticky NOTES Section -->
 
-		     <div class="form-group">
+		    <div class="form-group">
               <div class="col-sm-10">
-                <input  class="form-control" name="city" ng-model="keyPartner" placeholder="Enter Key Partners">
-                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner()"> Add </button>
+                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <select  ng-model="note" > 
+                	<option value="1">note1</option>
+                	<option value="2">note2</option>
+                </select>
+                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner('keyPartners')"> Add </button>
 
              
               </div>
@@ -45,31 +56,40 @@
 		</div>
 		<div class="col-sm-2 colHeight" style="border:1px solid black;">
 
-				<h3>Key Activitiess</h3>
+				<h5 class="col-sm-2">Key Activities</h5>
+			<span class="glyphicon glyphicon-star right" style="margin-top:20px;"></span>
 
 
-			<div class="col-sm-2">
+
+
+			<div class="col-sm-2 clear">
 
 				<ul class="note">
 					  <li ng-repeat="info in userBM  | filter:filterActivities  | limitTo:2">
 					    <a href="#">
-					      <h2 class="text-center noteHeader">{{info.type}}</h2>
-					      <p class=" text-center">{{info.content}}</p>
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+						  <button class="left" >-</button>
+						  <button   class="right" ng-click="updateNote(info)">+</button>
 					    </a>
 					  </li>
 	  			</ul>
 
 			</div>
 
+<!-- 			Add Sticky NOTES Section -->
 
-		     <div class="form-group">
+		    <div class="form-group">
               <div class="col-sm-10">
-                <input  class="form-control" name="city" ng-model="keyActivities" placeholder="Enter Key Partners">
-                <button class="btn btn-sm btn-primary"  ng-click=""> Add </button>
+                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <select  ng-model="note" > 
+                	<option value="1">note1</option>
+                	<option value="2">note2</option>
+                </select>
+                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner('Key Activities')"> Add </button>
 
              
               </div>
-            </div>			
+            </div>		
 				
 			<br>
 			<br>
@@ -84,42 +104,98 @@
 
 		<div class="col-sm-2 colHeight" style="border:1px solid black;">
 
-			<h3>Value Propositions</h3>
-			<br>
+			<h5 class="col-sm-2">Value Propositions</h5>
+			<span class="glyphicon glyphicon-usd right" style="margin-top:20px;"></span>
+			
+
+			<div class="col-sm-2 clear">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterVp  | limitTo:2">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+						  <button class="left" >-</button>
+						  <button   class="right" ng-click="updateNote(info)">+</button>
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+<!-- 			Add Sticky NOTES Section -->
+
+		    <div class="form-group">
+              <div class="col-sm-10">
+                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <select  ng-model="note" > 
+                	<option value="1">note1</option>
+                	<option value="2">note2</option>
+                </select>
+                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner('Value Propositions')"> Add </button>
+
+             
+              </div>
+            </div>		
 	
 		</div>
 		<div class="col-sm-2 colHeight" style="border:1px solid black;">
 
-				<h3>Customer Relationships</h3>
+			<h5 class="col-sm-2">Customer Relationships</h5>
+			<span class="glyphicon glyphicon-heart right" style="margin-top:20px;"></span>
+
+
+			<div class="col-sm-2 clear">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterCR  | limitTo:2">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+						  <button class="left" >-</button>
+						  <button   class="right" ng-click="updateNote(info)">+</button>
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+<!-- 			Add Sticky NOTES Section -->
+
+		    <div class="form-group">
+              <div class="col-sm-10">
+                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <select  ng-model="note" > 
+                	<option value="1">note1</option>
+                	<option value="2">note2</option>
+                </select>
+                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner('Customer Relationships')"> Add </button>
+
+             
+              </div>
+            </div>	
 			
 
-	<!-- 		<div class="col-sm-12" >
-
-				<h3> channels </h3>
-
-
-					
-			</div> -->
-				
 		</div>
 		<div class="col-sm-2 colHeight" style="border:1px solid black;">
 
-			<h3>Customer Segments</h3>
-			
+			<h5 class="col-sm-2">Customer Segments</h5>
+			<span class="glyphicon glyphicon-user right" style="margin-top:20px;"></span>
+			 
 		
 				
 		</div>
 
 		<div class="col-sm-5 col-sm-offset-1 clear bottomColHeight" style="border:1px solid black;">
 
-			<h3>Cost Structure</h3>
+			<h5 class="col-sm-2">Cost Structure</h5>
+			<span class="glyphicon glyphicon-stats right" style="margin-top:20px;"></span>
 	
 
 				
 		</div>
 		<div class="col-sm-5 left bottomColHeight" style="border:1px solid black;">
 
-			<h3>Revenue Streams</h3>
+			<h5 class="col-sm-2">Revenue Streams</h5>
+			<span class="glyphicon glyphicon-piggy-bank right" style="margin-top:20px;"></span>
 		
 
 				

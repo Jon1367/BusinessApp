@@ -13,10 +13,10 @@
 
 Route::get('/', function () {
     return view('welcome');
-    //return View::make('index'); 
 });
 
 Route::post('search', 'ApiController@getData');
+
 
 
 /*
@@ -31,7 +31,12 @@ Route::get('processName/{name}', 'ApiController@getDetails');
 
 Route::get('getUser', 'ApiController@getUser');
 
+Route::get('getContent', 'ApiController@getContent');
+
 Route::get('updateUserBM/{content}/{table}', 'ApiController@updateUserKey');
+
+Route::get('updateNote/{content}/{table}/{type}', 'ApiController@updateNote');
+
 
 
 /*
@@ -41,4 +46,6 @@ Route::get('updateUserBM/{content}/{table}', 'ApiController@updateUserKey');
 */
 
 Route::post('logIn', 'userAuthController@auth');
+
+Route::get('logOut', 'userAuthController@logOut');
 
