@@ -100,15 +100,40 @@
 
           }
 
-          $scope.updateNote = function(info){
+          // Save Title
+          $scope.saveTitle = function(){
 
-             console.log(info);
+            console.log($scope.title);
+
+           // Get  user's Current Business Mdeal
+            $http({
+              method: 'GET',
+              url: '/addTitle/' + $scope.title
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Good :)');
+                console.log(response);
+
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+                console.log('Error -__-');
+                console.log(response);
+
+              });
+
+          }
+
+          $scope.deleteNote = function(info){
+
 
 
            //  Get  user's Current Business Mdeal
             $http({
               method: 'GET',
-              url: '/updateNote'
+              url: '/updateNote/' + info.type + '/' + info.value 
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
@@ -126,7 +151,7 @@
 
 
           }
-
+          // =====================  Filters ===========================
           $scope.filterKey = function(info)
           {
 
@@ -189,6 +214,58 @@
             // console.log(info);
 
             if(info.type === 'Customer Relationships'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+          $scope.filterCS = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Customer Segments'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+          
+          $scope.filterCStr = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Cost Structure'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+          $scope.filterRS = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Revenue Streams'){
 
               return true;
 

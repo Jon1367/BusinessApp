@@ -4,8 +4,22 @@
 	<br>
 
 <div class="row">
+
+	<div class="col-sm-4 col-sm-offset-3">
+
+       <input  class="form-control" name="city" ng-model="title" placeholder="Save Title">
+
+	</div>
+	<div class="col-sm-4">
+
+       <button ng-click="saveTitle()">Save</button>
+	</div>
+
+
+</div>
+<br>
+<div class="row">
 	
-		
 		<div class="col-sm-2 col-sm-offset-1 colHeight boderLeft" style="border:1px solid black;">
 
 	
@@ -21,8 +35,8 @@
 					
 				    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" >-</button>
-						  <button   class="right" ng-click="updateNote(info)">+</button>
+						  <button class="left" ng-click="deleteNote(info)" >-</button>
+						  <button   class="right" >+</button>
 				    </a>
 
 				  </li>
@@ -124,7 +138,7 @@
 
 <!-- 			Add Sticky NOTES Section -->
 
-		    <div class="form-group">
+		<div class="form-group">
               <div class="col-sm-10">
                 <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
                 <select  ng-model="note" > 
@@ -138,6 +152,7 @@
             </div>		
 	
 		</div>
+
 		<div class="col-sm-2 colHeight" style="border:1px solid black;">
 
 			<h5 class="col-sm-2">Customer Relationships</h5>
@@ -180,6 +195,35 @@
 			<h5 class="col-sm-2">Customer Segments</h5>
 			<span class="glyphicon glyphicon-user right" style="margin-top:20px;"></span>
 			 
+
+			<div class="col-sm-2 clear">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterCS  | limitTo:2">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+						  <button class="left" >-</button>
+						  <button   class="right" ng-click="updateNote(info)">+</button>
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+<!-- 			Add Sticky NOTES Section -->
+
+		    <div class="form-group">
+              <div class="col-sm-10">
+                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <select  ng-model="note" > 
+                	<option value="1">note1</option>
+                	<option value="2">note2</option>
+                </select>
+                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner('Customer Segments')"> Add </button>
+
+             
+              </div>
+            </div>		
 		
 				
 		</div>
@@ -188,8 +232,37 @@
 
 			<h5 class="col-sm-2">Cost Structure</h5>
 			<span class="glyphicon glyphicon-stats right" style="margin-top:20px;"></span>
-	
 
+			<br>
+	
+			<div class="col-sm-6">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterCStr  | limitTo:2" class="left bnotes">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+						  <button class="left" >-</button>
+						  <button   class="right" ng-click="updateNote(info)">+</button>
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+<!-- 			Add Sticky NOTES Section -->
+
+		    <div class="form-group">
+              <div class="col-sm-4" >
+                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <select  ng-model="note" > 
+                	<option value="1">note1</option>
+                	<option value="2">note2</option>
+                </select>
+                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner('Cost Structure')"> Add </button>
+
+             
+              </div>
+            </div>		
 				
 		</div>
 		<div class="col-sm-5 left bottomColHeight" style="border:1px solid black;">
@@ -197,16 +270,42 @@
 			<h5 class="col-sm-2">Revenue Streams</h5>
 			<span class="glyphicon glyphicon-piggy-bank right" style="margin-top:20px;"></span>
 		
+		<br>
+			<div class="col-sm-6">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterRS  | limitTo:2" class="left bnotes">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+						  <button class="left" >-</button>
+						  <button   class="right" ng-click="updateNote(info)">+</button>
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+<!-- 			Add Sticky NOTES Section -->
+
+		    <div class="form-group">
+              <div class="col-sm-4" >
+                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <select  ng-model="note" > 
+                	<option value="1">note1</option>
+                	<option value="2">note2</option>
+                </select>
+                <button class="btn btn-sm btn-primary"  ng-click="addKeyPartner('Revenue Streams')"> Add </button>
+
+             
+              </div>
+            </div>	
+
 
 				
 		</div>
 	
 
-		<div class="col-sm-4  clear right">
 
-			<button class="btn btn-lg  btn-primary">Save</button>
-			
-		</div>
 </div>
 
 

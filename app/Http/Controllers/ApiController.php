@@ -94,7 +94,7 @@ class ApiController extends Controller
 
 
         // Get Business modeal from DB for user's to search threw.
-        $query = DB::table('businessContent')->select('*')->where('type', 'title')->get();
+        $query = DB::table('businessTitle')->select('*')->get();
 
         //var_dump($query);
 
@@ -154,19 +154,104 @@ class ApiController extends Controller
             }else{
 
                // echo 'false';
-
+                DB::table('businessContent')
+                            ->where('userEmail', $userEmail)
+                            ->where('type', $table)
+                            ->where('value', $type)
+                            ->update(array('content' => $content));
                 return response()->json(['data' => 'false']);
 
             }
 
                 return response()->json(['data' => 'false']);
             
-
-
-       
-
+            
 
     }
+
+    public function addTitle($title){
+
+        $userEmail = session('userEmail');
+        // $userEmail = 'test@test.com';
+         echo $userEmail;
+         echo $title;
+
+        $query = DB::table('businessTitle')->select('*')->where('userEmail', $userEmail)->get();
+
+        //var_dump($query);
+
+        // Check if title exist
+        if(count($query) === 0){
+
+                DB::table('businessTitle')->insert(
+                        array('userEmail' => $userEmail, 'Title' => $title)
+                );
+
+                 echo 'true';
+
+                return response()->json(['data' => 'true']);
+
+            // Create
+            }else{
+
+                echo 'else';
+
+                DB::table('businessTitle')
+                            ->where('userEmail', $userEmail)
+                            ->update(array('Title' => $title));
+
+                return response()->json(['data' => 'false']);
+
+            }
+
+
+            return response()->json(['data' => 'false']);
+            
+            
+
+    }
+
+    public function deleteNote($table,$type){
+
+        $userEmail = session('userEmail');
+        // $userEmail = 'test@test.com';
+        //  echo $userEmail;
+        // // echo $content;
+        //  echo $table;
+        //  echo $type;
+
+         DB::table('businessContent')->where('userEmail', $userEmail)->where('type', $table)->where('value', $type)->delete();
+
+        // $query = DB::table('businessContent')->select('*')->where('userEmail', $userEmail)->where('type', $table)->where('value', $type)->get();
+
+        // //var_dump($query);
+
+        // if(count($query) === 0){
+
+        //         DB::table('businessContent')->insert(
+        //                 array('userEmail' => $userEmail, 'content' => $content, 'type' => $table, 'value' => $type)
+        //         );
+
+        //         // echo 'true';
+
+        //         return response()->json(['data' => 'true']);
+
+
+        //     }else{
+
+        //        // echo 'false';
+
+        //         return response()->json(['data' => 'false']);
+
+        //     }
+
+                 return response()->json(['data' => 'Good']);
+            
+            
+
+    }
+
+
 }
 
 ?>

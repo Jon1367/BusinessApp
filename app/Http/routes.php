@@ -37,6 +37,11 @@ Route::get('updateUserBM/{content}/{table}', 'ApiController@updateUserKey');
 
 Route::get('updateNote/{content}/{table}/{type}', 'ApiController@updateNote');
 
+Route::get('addTitle/{title}', 'ApiController@addTitle');
+
+Route::get('deleteNote/{table}/{type}', 'ApiController@deleteNote');
+
+
 
 
 /*
