@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Hash;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -70,8 +71,19 @@ class userAuthController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function createUser(Request $request)
     {
+            $email = $request->input('email');
+            $password = $request->input('password');
+
+            // echo $email;
+            // echo $password;
+
+            DB::table('users')->insert(
+                ['email' => $email, 'password' =>  Hash::make($password)]
+            );
+
+            return view('welcome');
        
     }
 

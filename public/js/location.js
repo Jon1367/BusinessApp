@@ -15,6 +15,9 @@
     }).when('/inbox', {
         templateUrl:'views/inbox.html',
         controller: 'inboxController'
+    }).when('/moreInfo/:email', {
+        templateUrl:'views/moreInfo.html',
+        controller: 'infoController'
     }).otherwise({
         redirectTo: '/'
     });
@@ -280,6 +283,159 @@
  .controller('inboxController', ['$scope', function($scope){
        
 
+
+}])
+ .controller('infoController', ['$scope', '$routeParams', '$http' ,function($scope,$routeParams,$http){
+
+    console.log($routeParams.email);
+  
+ 
+            //  Get  user's Current Business Mdeal
+            $http({
+              method: 'GET',
+              url: '/moreInfo/' + $routeParams.email  
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Good :)');
+                //console.log(response.data.data);
+                $scope.userBM = response.data.data;
+
+
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+                console.log('Error -__-');
+                console.log(response);
+
+              });      
+ 
+          // =====================  Filters ===========================
+          $scope.filterKey = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'keyPartners'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+            
+          $scope.filterActivities = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Key Activities'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+            
+          }
+
+
+          $scope.filterVp = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Value Propositions'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+
+          $scope.filterCR = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Customer Relationships'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+          $scope.filterCS = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Customer Segments'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+          
+          $scope.filterCStr = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Cost Structure'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
+          $scope.filterRS = function(info)
+          {
+
+            // console.log('Filter');
+            // console.log(info);
+
+            if(info.type === 'Revenue Streams'){
+
+              return true;
+
+            }else{
+
+              return false;
+
+            }
+
+          }
 
 }]);
 

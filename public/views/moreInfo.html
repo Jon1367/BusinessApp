@@ -1,0 +1,197 @@
+<div class="col-md-10" >
+
+	<h1 class="text-center"> Details Business Modals</h1>
+	<br>
+
+<div class="row">
+
+
+
+
+</div>
+<br>
+<div class="row">
+	
+		<div class="col-sm-2 col-sm-offset-1 colHeight boderLeft" style="border:1px solid black;">
+
+	
+		<h5 class="col-sm-2" >Key Partners</h5>
+			<span class="glyphicon glyphicon-link right" style="margin-top:20px;"></span>
+
+
+			<div class="col-sm-2 clear" >
+
+<!-- 			Sticky NOTES Section -->
+			<ul class="note">
+				  <li ng-repeat="info in userBM  | filter:filterKey | limitTo:2">
+					
+				    <a>
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+			
+				    </a>
+
+				  </li>
+
+  			</ul>
+
+
+				
+			</div>
+
+
+
+
+
+	
+				
+		</div>
+		<div class="col-sm-2 colHeight" style="border:1px solid black;">
+
+				<h5 class="col-sm-2">Key Activities</h5>
+			<span class="glyphicon glyphicon-star right" style="margin-top:20px;"></span>
+
+
+
+
+			<div class="col-sm-2 clear">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterActivities  | limitTo:2">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+
+		
+				
+		</div>
+
+		<div class="col-sm-2 colHeight" style="border:1px solid black;">
+
+			<h5 class="col-sm-2">Value Propositions</h5>
+			<span class="glyphicon glyphicon-usd right" style="margin-top:20px;"></span>
+			
+
+			<div class="col-sm-2 clear">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterVp  | limitTo:2">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+	
+	
+		</div>
+
+		<div class="col-sm-2 colHeight" style="border:1px solid black;">
+
+			<h5 class="col-sm-2">Customer Relationships</h5>
+			<span class="glyphicon glyphicon-heart right" style="margin-top:20px;"></span>
+
+
+			<div class="col-sm-2 clear">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterCR  | limitTo:2">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+
+
+
+		</div>
+		<div class="col-sm-2 colHeight" style="border:1px solid black;">
+
+			<h5 class="col-sm-2">Customer Segments</h5>
+			<span class="glyphicon glyphicon-user right" style="margin-top:20px;"></span>
+			 
+
+			<div class="col-sm-2 clear">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterCS  | limitTo:2">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+
+		
+				
+		</div>
+
+		<div class="col-sm-5 col-sm-offset-1 clear bottomColHeight" style="border:1px solid black;">
+
+			<h5 class="col-sm-2">Cost Structure</h5>
+			<span class="glyphicon glyphicon-stats right" style="margin-top:20px;"></span>
+
+			<br>
+	
+			<div class="col-sm-6">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterCStr  | limitTo:2" class="left bnotes">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+	
+				
+		</div>
+		<div class="col-sm-5 left bottomColHeight" style="border:1px solid black;">
+
+			<h5 class="col-sm-2">Revenue Streams</h5>
+			<span class="glyphicon glyphicon-piggy-bank right" style="margin-top:20px;"></span>
+		
+		<br>
+			<div class="col-sm-6">
+
+				<ul class="note">
+					  <li ng-repeat="info in userBM  | filter:filterRS  | limitTo:2" class="left bnotes">
+					    <a href="#">
+				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
+
+					    </a>
+					  </li>
+	  			</ul>
+
+			</div>
+
+
+
+
+				
+		</div>
+	
+
+
+</div>
+
+
+
+
+	
+</div>

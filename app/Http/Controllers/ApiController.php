@@ -250,6 +250,27 @@ class ApiController extends Controller
             
 
     }
+    public function moreInfo($email){
+
+        //$userEmail = session('userEmail');
+        // $userEmail = 'test@test.com';
+         // echo $email;
+        // // echo $content;
+        //  echo $table;
+        //  echo $type;
+
+        // DB::table('businessContent')->where('userEmail', $userEmail)->where('type', $table)->where('value', $type)->delete();
+
+         $query = DB::table('businessContent')->select('*')->where('userEmail', $email)->get();
+
+
+
+        return response()->json(['data' => $query]);
+
+            
+            
+
+    }
 
 
 }

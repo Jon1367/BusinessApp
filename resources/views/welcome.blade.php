@@ -50,20 +50,22 @@
       </div>
       <h2 class="text-center">Sign Up</h2>
       <div class="modal-body ">
-        <form class="form-horizontal " role="form">
+        <form class="form-horizontal " method="POST" role="form" action="/siginUp">
         <div class="form-group">
           <div class="col-sm-8 col-sm-push-2">
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-8 col-sm-push-2">
-            <input type="password" class="form-control" id="email" placeholder="Enter password">
+            <input type="password" class="form-control" name="password" placeholder="Enter password">
+            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
           </div>
         </div>
         <div class="form-group">        
           <div class="col-sm-10 col-sm-push-4">
-            <button type="submit" class="btn btn-lg  btn-primary">SignUp</button>
+            <button type="submit" class="btn btn-lg  btn-primary">Sign Up</button>
           </div>
         </div>
       </form>

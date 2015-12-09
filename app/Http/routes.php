@@ -41,6 +41,9 @@ Route::get('addTitle/{title}', 'ApiController@addTitle');
 
 Route::get('deleteNote/{table}/{type}', 'ApiController@deleteNote');
 
+Route::get('moreInfo/{email}', 'ApiController@moreInfo');
+
+
 
 
 
@@ -51,6 +54,8 @@ Route::get('deleteNote/{table}/{type}', 'ApiController@deleteNote');
 */
 
 Route::post('logIn', 'userAuthController@auth');
+
+Route::post('siginUp', 'userAuthController@createUser');
 
 Route::get('logOut', 'userAuthController@logOut');
 
