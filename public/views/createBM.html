@@ -1,18 +1,24 @@
 <div class="col-md-10" >
 
-	<h1 class="text-center"> Create a Business Modals</h1>
+	<h1 class="text-center"> Create a Business Model</h1>
 	<br>
 
 <div class="row">
 
-	<div class="col-sm-4 col-sm-offset-3">
+	<div class="col-sm-4 col-sm-offset-1">
+
+     <h2>{{userTitle}}</h2>
+
+	</div>
+
+	<div class="col-sm-4 col-sm-offset-1 topalign">
 
        <input  class="form-control" name="city" ng-model="title" placeholder="Save Title">
 
 	</div>
-	<div class="col-sm-4">
+	<div class="col-sm-2 topalign">
 
-       <button ng-click="saveTitle()">Save</button>
+       <button  class="btn btn-sm btn-primary" ng-click="saveTitle()">Save</button>
 	</div>
 
 
@@ -35,8 +41,8 @@
 					
 				    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" ng-click="deleteNote(info)" >-</button>
-						  <button   class="right" >+</button>
+						  <button class="btn-xs btn-danger center"  ng-click="deleteNote(info)" >Remove</button>
+						  
 				    </a>
 
 				  </li>
@@ -49,12 +55,14 @@
 
 
 
+
 <!-- 			Add Sticky NOTES Section -->
 
-		    <div class="form-group">
+		    <div class="form-group" class="addBox">
               <div class="col-sm-10">
-                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
-                <select  ng-model="note" > 
+                <textarea class="form-control addBox" ng-model="noteContent" placeholder="comment"/>
+                <select  ng-model="note"  name="keyP">                 	   
+                	<option value="">---Select Note---</option> 
                 	<option value="1">note1</option>
                 	<option value="2">note2</option>
                 </select>
@@ -80,10 +88,9 @@
 
 				<ul class="note">
 					  <li ng-repeat="info in userBM  | filter:filterActivities  | limitTo:2">
-					    <a href="#">
+					    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" >-</button>
-						  <button   class="right" ng-click="updateNote(info)">+</button>
+						  <button class="btn-xs btn-danger center"  ng-click="deleteNote(info)" >Remove</button>
 					    </a>
 					  </li>
 	  			</ul>
@@ -94,8 +101,9 @@
 
 		    <div class="form-group">
               <div class="col-sm-10">
-                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <textarea class="form-control addBox" ng-model="noteContent" placeholder="comment"/>
                 <select  ng-model="note" > 
+                	<option value="">---Select Note---</option> 
                 	<option value="1">note1</option>
                 	<option value="2">note2</option>
                 </select>
@@ -126,10 +134,10 @@
 
 				<ul class="note">
 					  <li ng-repeat="info in userBM  | filter:filterVp  | limitTo:2">
-					    <a href="#">
+					    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" >-</button>
-						  <button   class="right" ng-click="updateNote(info)">+</button>
+						  <button class="btn-xs btn-danger center" ng-click="deleteNote(info)" >Remove</button>
+
 					    </a>
 					  </li>
 	  			</ul>
@@ -140,8 +148,9 @@
 
 		<div class="form-group">
               <div class="col-sm-10">
-                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <textarea class="form-control addBox" ng-model="noteContent" placeholder="comment"/>
                 <select  ng-model="note" > 
+                	<option value="">---Select Note---</option> 
                 	<option value="1">note1</option>
                 	<option value="2">note2</option>
                 </select>
@@ -163,10 +172,9 @@
 
 				<ul class="note">
 					  <li ng-repeat="info in userBM  | filter:filterCR  | limitTo:2">
-					    <a href="#">
+					    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" >-</button>
-						  <button   class="right" ng-click="updateNote(info)">+</button>
+							<button class="btn-xs btn-danger center" ng-click="deleteNote(info)" >Remove</button>
 					    </a>
 					  </li>
 	  			</ul>
@@ -177,8 +185,9 @@
 
 		    <div class="form-group">
               <div class="col-sm-10">
-                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <textarea class="form-control addBox" ng-model="noteContent" placeholder="comment"/>
                 <select  ng-model="note" > 
+                	<option value="">---Select Note---</option> 
                 	<option value="1">note1</option>
                 	<option value="2">note2</option>
                 </select>
@@ -200,10 +209,9 @@
 
 				<ul class="note">
 					  <li ng-repeat="info in userBM  | filter:filterCS  | limitTo:2">
-					    <a href="#">
+					    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" >-</button>
-						  <button   class="right" ng-click="updateNote(info)">+</button>
+							<button class="btn-xs btn-danger center" ng-click="deleteNote(info)" >Remove</button>
 					    </a>
 					  </li>
 	  			</ul>
@@ -214,8 +222,10 @@
 
 		    <div class="form-group">
               <div class="col-sm-10">
-                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+                <textarea class="form-control addBox" ng-model="noteContent" placeholder="comment"/>
+
                 <select  ng-model="note" > 
+                	<option value="">---Select Note---</option> 
                 	<option value="1">note1</option>
                 	<option value="2">note2</option>
                 </select>
@@ -235,14 +245,13 @@
 
 			<br>
 	
-			<div class="col-sm-6">
+			<div class="col-sm-7">
 
 				<ul class="note">
 					  <li ng-repeat="info in userBM  | filter:filterCStr  | limitTo:2" class="left bnotes">
-					    <a href="#">
+					    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" >-</button>
-						  <button   class="right" ng-click="updateNote(info)">+</button>
+		<button class="btn-xs btn-danger center" ng-click="deleteNote(info)" >Remove</button>
 					    </a>
 					  </li>
 	  			</ul>
@@ -252,9 +261,11 @@
 <!-- 			Add Sticky NOTES Section -->
 
 		    <div class="form-group">
-              <div class="col-sm-4" >
-                <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
+              <div class="col-sm-3" >
+                <textarea class="form-control addBox" ng-model="noteContent" placeholder="comment"/>
+               
                 <select  ng-model="note" > 
+                	<option value="">---Select Note---</option> 
                 	<option value="1">note1</option>
                 	<option value="2">note2</option>
                 </select>
@@ -271,14 +282,13 @@
 			<span class="glyphicon glyphicon-piggy-bank right" style="margin-top:20px;"></span>
 		
 		<br>
-			<div class="col-sm-6">
+			<div class="col-sm-7">
 
 				<ul class="note">
 					  <li ng-repeat="info in userBM  | filter:filterRS  | limitTo:2" class="left bnotes">
-					    <a href="#">
+					    <a>
 				      	<h3 class="noteHeader text-center">{{info.content}}</h3>
-						  <button class="left" >-</button>
-						  <button   class="right" ng-click="updateNote(info)">+</button>
+		<button class="btn-xs btn-danger center" ng-click="deleteNote(info)" >Remove</button>
 					    </a>
 					  </li>
 	  			</ul>
@@ -288,9 +298,10 @@
 <!-- 			Add Sticky NOTES Section -->
 
 		    <div class="form-group">
-              <div class="col-sm-4" >
+              <div class="col-sm-3" >
                 <input  class="form-control" name="city" ng-model="noteContent" placeholder="Enter Key Partners">
                 <select  ng-model="note" > 
+                	<option value="">---Select Note---</option> 
                 	<option value="1">note1</option>
                 	<option value="2">note2</option>
                 </select>

@@ -39,9 +39,24 @@ Route::get('updateNote/{content}/{table}/{type}', 'ApiController@updateNote');
 
 Route::get('addTitle/{title}', 'ApiController@addTitle');
 
+Route::get('getTitle', 'ApiController@getTitle');
+
 Route::get('deleteNote/{table}/{type}', 'ApiController@deleteNote');
 
 Route::get('moreInfo/{email}', 'ApiController@moreInfo');
+
+Route::get('sendMessage/{toEmail}/{message}', 'ApiController@sendMessage');
+
+Route::get('getMessages/', 'ApiController@getMessages');
+
+Route::get('getUserMessages/{fromEmail}', 'ApiController@getUserMessages');
+
+
+Route::get('searchTitle/{input}', 'ApiController@searchTitle');
+
+
+
+
 
 
 

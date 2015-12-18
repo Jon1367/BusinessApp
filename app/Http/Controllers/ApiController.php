@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -81,9 +82,39 @@ class ApiController extends Controller
 
         $userEmail = session('userEmail');
 
+    
+
         $query = DB::table('businessContent')->select('*')->where('userEmail', $userEmail)->get();
 
-        //var_dump($query);
+        // $users = DB::table('businessContent')
+        //     ->join('businessTitle', 'businessContent.userEmail', '=', 'businessTitle.userEmail')
+        //     ->where('businessContent.userEmail', $userEmail)
+        //     ->select('*')
+        //     ->get();
+
+        //var_dump($users);
+
+        return response()->json(['data' => $query]);
+       
+
+
+    }
+    public function getTitle(){
+
+
+        $userEmail = session('userEmail');
+
+    
+
+        $query = DB::table('businessTitle')->select('*')->where('userEmail', $userEmail)->get();
+
+        // $users = DB::table('businessContent')
+        //     ->join('businessTitle', 'businessContent.userEmail', '=', 'businessTitle.userEmail')
+        //     ->where('businessContent.userEmail', $userEmail)
+        //     ->select('*')
+        //     ->get();
+
+        //var_dump($users);
 
         return response()->json(['data' => $query]);
        
@@ -148,7 +179,7 @@ class ApiController extends Controller
 
                 // echo 'true';
 
-                return response()->json(['data' => 'true']);
+        
 
 
             }else{
@@ -159,11 +190,11 @@ class ApiController extends Controller
                             ->where('type', $table)
                             ->where('value', $type)
                             ->update(array('content' => $content));
-                return response()->json(['data' => 'false']);
+
 
             }
 
-                return response()->json(['data' => 'false']);
+                return response()->json(['data' => true]);
             
             
 
@@ -175,6 +206,8 @@ class ApiController extends Controller
         // $userEmail = 'test@test.com';
          echo $userEmail;
          echo $title;
+        $mytime = Carbon\Carbon::now();
+        $formattedTime =  $mytime->toDateTimeString();
 
         $query = DB::table('businessTitle')->select('*')->where('userEmail', $userEmail)->get();
 
@@ -184,7 +217,7 @@ class ApiController extends Controller
         if(count($query) === 0){
 
                 DB::table('businessTitle')->insert(
-                        array('userEmail' => $userEmail, 'Title' => $title)
+                        array('userEmail' => $userEmail, 'Title' => $title, 'timeStamp' => $formattedTime)
                 );
 
                  echo 'true';
@@ -198,7 +231,7 @@ class ApiController extends Controller
 
                 DB::table('businessTitle')
                             ->where('userEmail', $userEmail)
-                            ->update(array('Title' => $title));
+                            ->update(array('Title' => $title,'timeStamp' => $formattedTime));
 
                 return response()->json(['data' => 'false']);
 
@@ -222,30 +255,9 @@ class ApiController extends Controller
 
          DB::table('businessContent')->where('userEmail', $userEmail)->where('type', $table)->where('value', $type)->delete();
 
-        // $query = DB::table('businessContent')->select('*')->where('userEmail', $userEmail)->where('type', $table)->where('value', $type)->get();
+ 
 
-        // //var_dump($query);
-
-        // if(count($query) === 0){
-
-        //         DB::table('businessContent')->insert(
-        //                 array('userEmail' => $userEmail, 'content' => $content, 'type' => $table, 'value' => $type)
-        //         );
-
-        //         // echo 'true';
-
-        //         return response()->json(['data' => 'true']);
-
-
-        //     }else{
-
-        //        // echo 'false';
-
-        //         return response()->json(['data' => 'false']);
-
-        //     }
-
-                 return response()->json(['data' => 'Good']);
+        return response()->json(['data' => 'Good']);
             
             
 
@@ -261,7 +273,54 @@ class ApiController extends Controller
 
         // DB::table('businessContent')->where('userEmail', $userEmail)->where('type', $table)->where('value', $type)->delete();
 
-         $query = DB::table('businessContent')->select('*')->where('userEmail', $email)->get();
+         //$query = DB::table('businessContent')->select('*')->where('userEmail', $email)->get();
+
+        $users = DB::table('businessContent')
+            ->join('businessTitle', 'businessContent.userEmail', '=', 'businessTitle.userEmail')
+            ->where('businessContent.userEmail', $email)
+            ->select('*')
+            ->get();
+
+
+
+        return response()->json(['data' => $users]);
+
+            
+            
+
+    }
+    public function sendMessage($toEmail,$message){
+
+        $userEmail = session('userEmail');
+        // $userEmail = 'test@test.com';
+         // echo $email;
+        // // echo $content;
+            echo $toEmail;
+            echo $message;
+            $mytime = Carbon\Carbon::now();
+            $formattedTime =  $mytime->toDateTimeString();
+
+
+        DB::table('messages')->insert(
+            array('email' => $toEmail, 'message' => $message, 'fromEmail' => $userEmail, 'timeStamp' => $formattedTime)
+        );
+
+
+
+
+
+        return response()->json(['data' => True]);
+
+            
+            
+
+    }
+    public function getMessages(){
+
+        $userEmail = session('userEmail');
+ 
+
+        $query = DB::table('messages')->select('*')->where('email', $userEmail)->get();
 
 
 
@@ -271,8 +330,48 @@ class ApiController extends Controller
             
 
     }
+    public function getUserMessages($fromEmail){
+
+        $userEmail = session('userEmail');
+
+       // echo $fromEmail;
 
 
+         $query = DB::table('messages')
+            ->where('email', $userEmail)
+            ->where('fromEmail', $fromEmail)
+            ->orWhere(function($query2) use ($fromEmail,$userEmail)
+            {
+                $query2->where('email', $fromEmail)
+                      ->where('fromEmail',$userEmail);
+            })
+            ->get();
+
+        
+
+        return response()->json(['data' => $query]);
+
+            
+            
+
+    }
+    public function searchTitle($input){
+
+        $userEmail = session('userEmail');
+
+        //echo $input;
+
+
+        $query = DB::table('businessTitle')->select('*')->where('Title', $input)->orWhere('userEmail', $input)->get();
+
+        
+
+        return response()->json(['data' => $query]);
+
+            
+            
+
+    }
 }
 
 ?>

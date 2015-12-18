@@ -82,7 +82,7 @@ li > span{
 }
 #sideBar{
 
-	height:700px;
+	height:800px;
 	background-color: #E5E5E5 !important;
 	padding-top: 100px;
 	padding-right:0px;
@@ -256,14 +256,20 @@ div[class="panel panel-info"]:hover{
 	height:400px;
 
 }
+.center{
+
+	margin-left: 15px;
+}
 .note li a{
 
   text-decoration:none;
   color:#000;
   background:#ffc;
   display:block;
-  height:6em;
-  width:6em;
+  height:7em;
+  width:7em;
+  padding:5px;
+  margin-bottom: 10px;
 
 
   /* Firefox */
@@ -276,10 +282,10 @@ div[class="panel panel-info"]:hover{
 }
 .note{
 
-	padding-left: 0px;
+	padding:0px;
 }
 .noteHeader{
-  font-size: 18px;
+  font-size: 20px;
   font-weight:normal;
   font-family:"Reenie Beanie",arial,sans-serif;
   color: black;
@@ -313,6 +319,115 @@ div[class="panel panel-info"]:hover{
 .bnotes{
 
 	margin-right: 15px;
+}
+.inputBox{
+
+	border: 1px solid black;
+}
+.topalign{
+
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.addBox{
+
+	/*border: 2px solid black !important;*/
+
+	height: 400px;
+}
+.DetailUser{
+
+	color:white;
+	font-size: 25px;
+	margin-top: 20px;
+	margin-bottom:20px;
+}
+.userEmail{
+
+	margin-top: 20px;
+	margin-bottom:20px;
+	margin-left:10px
+}
+#messageButton{
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+#usersInbox{
+
+	height:800px;
+
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+
+}
+.inboxMessages{
+
+	width:100%;
+	
+	padding:15px;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color:  #E5E5E5 !important;
+	border-radius: 5px;
+	cursor: pointer;
+
+}
+.msg:hover{
+
+width:100%;
+color:#0D71B9;
+
+
+}
+.userName{
+
+	color:rgba(55,191,255,.9);
+}
+.chatMsg{
+	
+	margin-top:10px;
+	margin-left:10px;
+
+	
+	padding:10px;
+		border-radius: 10px;
+	background-color:  white;
+
+}
+.dashboardList{
+
+	margin-top: 10px;
+	margin-bottom:10px;
+	margin-left:15px;
+	margin-right: 15px; 
+
+}
+.dashboardButtons{
+
+	margin-top: 50px !important;
+	margin-bottom: 10px !important;
+	font-size:20px;
+	font-style:bold;
+
+
+}
+#serachButton{
+
+	margin-top: 45px;
+	
+
+}
+#top{
+	margin-bottom:20px;
+	border-bottom: 2px solid black;
+}
+#msgIcon{
+
+	margin-left: 10px;
+	margin-right: 5px;
+
 }
 /**{
   margin:0;

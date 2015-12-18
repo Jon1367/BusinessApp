@@ -18,18 +18,17 @@
     }).when('/moreInfo/:email', {
         templateUrl:'views/moreInfo.html',
         controller: 'infoController'
+    }).when('/chat/:fromEmail', {
+        templateUrl:'views/chat.html',
+        controller: 'chatController'
     }).otherwise({
         redirectTo: '/'
     });
   })
 
- .controller('mainController', ['$scope', function($scope){
+ .controller('mainController', ['$scope', '$http', function($scope,$http){
        
-
- }])
- .controller('searchController', ['$scope', '$http', function($scope,$http){
-       
-        $http({
+               $http({
           method: 'GET',
           url: '/getContent'
         }).then(function successCallback(response) {
@@ -51,8 +50,46 @@
           });
 
  }])
- .controller('createController', ['$scope', '$http', function($scope,$http){
+ .controller('searchController', ['$scope', '$http', function($scope,$http){
+
+
+
+    $scope.search = function() {
+
+  console.log($scope.searchText);
+
+      
        
+        $http({
+          method: 'GET',
+          url: '/searchTitle/' + $scope.searchText 
+        }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            console.log('Good :)');
+            console.log(response);
+
+            $scope.title = response.data.data;
+        
+
+            //console.log($scope.userBM )
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+
+            console.log('Error -__-');
+            console.log(response);
+
+          });
+
+    }
+
+
+ }])
+ .controller('createController', ['$scope', '$http', '$location', '$route' ,function($scope,$http,$location,$route){
+       
+    $scope.userTitle = 'Business Model Title';
+
 
        //  Get  user's Current Business Mdeal
         $http({
@@ -62,7 +99,9 @@
             // this callback will be called asynchronously
             // when the response is available
             console.log('Good :)');
-            //console.log(response);
+            console.log('Get User');
+
+            console.log(response.data.data[0]['userEmail']);
 
             $scope.userBM = response.data.data;
 
@@ -76,13 +115,37 @@
 
           });
 
+
+       //  Get  user's Title
+        $http({
+          method: 'GET',
+          url: '/getTitle'
+        }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            console.log('Good :)');
+            //console.log(response.data.data[0]);
+
+            $scope.userTitle = response.data.data[0]['Title'];
+
+        
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+
+            console.log('Error -__-');
+            console.log(response);
+
+          });
+
+
           // Add to DB
           $scope.addKeyPartner = function(table){
 
 
-            console.log($scope.note);
-            console.log($scope.noteContent);
-            console.log(table);
+            // console.log($scope.note);
+            // console.log($scope.noteContent);
+            // console.log(table);
 
             $http({
               method: 'GET',
@@ -91,15 +154,23 @@
 
                 console.log('Good :)');
                 console.log(response);
+               // $route.reload();
 
 
+           
              
               }, function errorCallback(response) {
 
                 console.log('Error -__-');
                 console.log(response);
+                ///$route.reload();
+
+
 
               });
+
+
+                  $route.reload();
 
           }
 
@@ -127,21 +198,23 @@
 
               });
 
+            $route.reload();
+            
+
           }
 
           $scope.deleteNote = function(info){
 
-
-
            //  Get  user's Current Business Mdeal
             $http({
               method: 'GET',
-              url: '/updateNote/' + info.type + '/' + info.value 
+              url: '/deleteNote/' + info.type + '/' + info.value 
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
                 console.log('Good :)');
                 console.log(response);
+               
 
               }, function errorCallback(response) {
                 // called asynchronously if an error occurs
@@ -151,6 +224,9 @@
                 console.log(response);
 
               });
+
+            $route.reload();
+
 
 
           }
@@ -280,17 +356,99 @@
 
           }
 }])
- .controller('inboxController', ['$scope', function($scope){
+ .controller('inboxController', ['$scope', '$http', function($scope,$http){
        
+            // Get  user's Current Business Mdeal
+            $http({
+              method: 'GET',
+              url: '/getMessages/'
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Good :)');
+                console.log(response);
+  
+                $scope.userList = response.data.data;
+
+
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+                console.log('Error -__-');
+                console.log(response);
+
+              });   
+
 
 
 }])
+ .controller('chatController', ['$scope', '$routeParams', '$http', '$route', function($scope,$routeParams,$http,$route){
+    console.log('chatController');
+    console.log($routeParams.fromEmail);
+
+            //  Get  user's Current Business Mdeafrom
+            $http({
+              method: 'GET',
+              url: '/getUserMessages/' + $routeParams.fromEmail  
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Good :)');
+                console.log('GotUserMessages');
+                console.log(response.data.data);
+
+                $scope.userMessages = response.data.data;
+   
+
+
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+                console.log('Error -__-');
+                console.log(response);
+
+              }); 
+
+
+            $scope.sendMessage = function(){
+
+
+                        //  Get  user's Current Business Mdeal
+            $http({
+              method: 'GET',
+              url: '/sendMessage/' + $routeParams.fromEmail + '/' + $scope.message 
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Good :)');
+                console.log(response);
+
+       
+
+
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+                console.log('Error -__-');
+                console.log(response);
+
+              });  
+
+            $route.reload();
+
+          }
+       
+
+ }])
  .controller('infoController', ['$scope', '$routeParams', '$http' ,function($scope,$routeParams,$http){
 
     console.log($routeParams.email);
   
  
-            //  Get  user's Current Business Mdeal
+            //  Get  user's Current Business Mdeafrom
             $http({
               method: 'GET',
               url: '/moreInfo/' + $routeParams.email  
@@ -298,7 +456,9 @@
                 // this callback will be called asynchronously
                 // when the response is available
                 console.log('Good :)');
-                //console.log(response.data.data);
+                console.log(response.data.data[0]['userEmail']);
+                $scope.userEmail = response.data.data[0]['userEmail'];
+                $scope.userTitle = response.data.data[0]['Title'];
                 $scope.userBM = response.data.data;
 
 
@@ -309,7 +469,43 @@
                 console.log('Error -__-');
                 console.log(response);
 
-              });      
+              });    
+
+
+
+
+          $scope.sendMessage = function(toEmail){
+
+            console.log('sendMessage model');
+            console.log(toEmail);
+            console.log($scope.message);
+
+
+                        //  Get  user's Current Business Mdeal
+            $http({
+              method: 'GET',
+              url: '/sendMessage/' + toEmail + '/' + $scope.message 
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                console.log('Good :)');
+                console.log(response);
+
+       
+
+
+              }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+                console.log('Error -__-');
+                console.log(response);
+
+              });  
+
+
+
+          }  
  
           // =====================  Filters ===========================
           $scope.filterKey = function(info)
